@@ -5,41 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="calc.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script src="https://kit.fontawesome.com/7c4ae43d23.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
 </head>
 <body>
-    <div class="calc-container">
-        <div class="calc-name">DizCalc</div>
-        <div class="row display" id="display">0</div>
-        <div class="row">
-            <div class="calc-buttons calc-function" id="clear">A/C</div>
-            <div class="calc-buttons calc-function" id="plusminus">+/-</div>
-            <div class="calc-buttons calc-function" id="percentage">%</div>
-            <div class="calc-buttons calc-operator" id="divide">/</div>
+    <div class="page-container">
+        <div class="calc-container">
+            <div class="calc-name">DizCalc</div>
+            <div class="row display" id="display">
+                <div class="equation" id="equation"></div>
+                <div class="answer" id="answer">0</div>
+            </div>
+            <div class="row">
+                <button class="calc-buttons calc-function" id="delete"><i class="material-icons">backspace</i></button>
+                <button class="calc-buttons calc-function" id="plusminus">+/-</button>
+                <button class="calc-buttons calc-function" id="percentage">%</button>
+                <button class="calc-buttons calc-operator" id="divide" data-operator>÷</button>
+            </div>
+            <div class="row">
+                <button class="calc-buttons calc-numbers" id="7" data-number>7</button>
+                <button class="calc-buttons calc-numbers" id="8">8</button>
+                <button class="calc-buttons calc-numbers" id="9">9</button>
+                <button class="calc-buttons calc-operator" id="multiply" data-operator>x</button>
+            </div>
+            <div class="row">
+                <button class="calc-buttons calc-numbers" id="4">4</button>
+                <button class="calc-buttons calc-numbers" id="5">5</button>
+                <button class="calc-buttons calc-numbers" id="6">6</button>
+                <button class="calc-buttons calc-operator" id="subtract" data-operator>-</button>
+            </div>
+            <div class="row">
+                <button class="calc-buttons calc-numbers" id="1">1</button>
+                <button class="calc-buttons calc-numbers" id="2">2</button>
+                <button class="calc-buttons calc-numbers" id="3">3</button>
+                <button class="calc-buttons calc-operator" id="add" data-operator>+</button>
+            </div>
+            <div class="row">
+                <button class="calc-buttons calc-function" id="clear">A/C</button>
+                <button class="calc-buttons calc-numbers" id="0">0</button>
+                <button class="calc-buttons calc-numbers" id="decimal">.</button>
+                <button class="calc-buttons calc-operator" id="equals">=</button>
+            </div>
         </div>
-        <div class="row">
-            <div class="calc-buttons calc-numbers" id="7">7</div>
-            <div class="calc-buttons calc-numbers" id="8">8</div>
-            <div class="calc-buttons calc-numbers" id="9">9</div>
-            <div class="calc-buttons calc-operator" id="mulitply">*</div>
-        </div>
-        <div class="row">
-            <div class="calc-buttons calc-numbers" id="4">4</div>
-            <div class="calc-buttons calc-numbers" id="5">5</div>
-            <div class="calc-buttons calc-numbers" id="6">6</div>
-            <div class="calc-buttons calc-operator" id="subtract">-</div>
-        </div>
-        <div class="row">
-            <div class="calc-buttons calc-numbers" id="1">1</div>
-            <div class="calc-buttons calc-numbers" id="2">2</div>
-            <div class="calc-buttons calc-numbers" id="3">3</div>
-            <div class="calc-buttons calc-operator" id="add">+</div>
-        </div>
-        <div class="row">
-            <div class="calc-buttons calc-numbers zero-stretch" id="0">0</div>
-            <div class="calc-buttons calc-numbers" id="decimal">.</div>
-            <div class="calc-buttons calc-operator" id="equals">=</div>
+        <div class="footer">
+            <a href="https://github.com/dizenver/etch-a-sketch"><i class="fab fa-github fa-2x" aria-hidden="true"></i><div>Built by dizenver </div></a>
         </div>
     </div>
 </body>
