@@ -17,6 +17,7 @@ const squaredBtn = document.getElementById('squared')
 const equationDisplay = document.getElementById('equation')
 const answerDisplay = document.getElementById('answer')
 
+window.addEventListener('keydown', keyboardInput)
 equalsBtn.addEventListener('click', evaluate)
 clearBtn.addEventListener('click', clear)
 deleteBtn.addEventListener('click', deleteNum)
@@ -117,6 +118,23 @@ function roundAnswer(num) {
     return Math.round(num * 100000) / 100000
 }
 
+  /* Keyboard Support */
+  function keyboardInput(e) {
+    if (e.key >= 0 && e.key <= 9) appendNumber(e.key)
+    if (e.key === 'Escape') clear ()
+    if (e.key === '.') appendPoint()
+    if (e.key === 'Backspace') deleteNum()
+    if (e.key === '=' || e.key === 'Enter') evaluate()
+    if (e.key === '+' || e.key === '-' || e.key === 'x' || e.key === '*' || e.key === '/')
+      setOperator(keyboardOperators(e.key))
+}
+
+function keyboardOperators(keyInput) {
+    if(keyInput === '/') return '÷'
+    if(keyInput === 'x' || keyInput === '*') return 'x'
+    if(keyInput === '-') return '-'
+    if(keyInput === '+') return '+'
+}
 
 /* Basic Calc Functions */
 function add(a,b) {
