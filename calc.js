@@ -9,7 +9,10 @@ const equalsBtn = document.getElementById('equals')
 const clearBtn = document.getElementById('clear')
 const deleteBtn = document.getElementById('delete')
 const plusMinusBtn = document.getElementById('plusminus')
+const percentBtn = document.getElementById('percentage')
 const decimalBtn = document.getElementById('decimal')
+const sqrtBtn = document.getElementById('square-root')
+const squaredBtn = document.getElementById('squared')
 
 const equationDisplay = document.getElementById('equation')
 const answerDisplay = document.getElementById('answer')
@@ -19,6 +22,9 @@ clearBtn.addEventListener('click', clear)
 deleteBtn.addEventListener('click', deleteNum)
 decimalBtn.addEventListener('click', appendPoint)
 plusMinusBtn.addEventListener('click', plusMinus)
+percentBtn.addEventListener('click', percent)
+sqrtBtn.addEventListener('click', sqrt)
+squaredBtn.addEventListener('click', squared)
 
 calcNumbers.forEach((button) =>
     button.addEventListener('click', () => appendNumber(button.textContent))
@@ -64,6 +70,25 @@ function plusMinus() {
     answerDisplay.textContent = value * -1;
 }
 
+function percent() {
+    let value = answerDisplay.textContent
+    answerDisplay.textContent = value * .01;
+}
+
+function sqrt() {
+    let value = answerDisplay.textContent
+    answerDisplay.textContent = roundAnswer(Math.pow(value, .5));
+    equationDisplay.textContent = `√ ${value} =`
+}
+
+function squared() {
+    let value = answerDisplay.textContent
+    answerDisplay.textContent = Math.pow(value, 2);
+    equationDisplay.textContent = `${value}² =`
+}
+
+
+
 function setOperator(operator) {
     if(currentOperation !== null) evaluate()
     firstOperand  = answerDisplay.textContent
@@ -74,8 +99,10 @@ function setOperator(operator) {
 
 function evaluate () {
     if (currentOperation === null || shouldResetDisplay) return
-    if(currentOperation === '+' && answerDisplay.textContent === '0') {
-        alert ("You can't divide by 0!")
+    if(currentOperation === '÷' && answerDisplay.textContent === '0') {
+        equationDisplay.textContent = `${firstOperand} ${currentOperation} ${answerDisplay.textContent} = ERROR!`
+        currentOperation = null
+        answerDisplay.textContent = "Unable to Divide by 0!";
         return
     }
     secondOperand = answerDisplay.textContent
@@ -87,7 +114,7 @@ function evaluate () {
 }
 
 function roundAnswer(num) {
-    return Math.round(num * 1000) / 1000
+    return Math.round(num * 100000) / 100000
 }
 
 
@@ -111,23 +138,28 @@ function divide(a,b) {
     return sum;
 };
 
-
+function exponent(a,b) {
+    sum = Math.pow(a, b);
+    return sum;
+};
 
 function operate(operator, a, b) {
     a = Number(a)
     b = Number(b)
 
     switch (operator) {
-      case '+':
-        return add(a, b)
-      case '-':
-        return subtract(a, b)
-      case 'x':
-        return multiply(a, b)
-      case '÷':
-        if (b === 0) return null
-        else return divide(a, b)
-      default:
-        return null
+        case '+':
+            return add(a, b)
+        case '-':
+            return subtract(a, b)
+        case 'x':
+            return multiply(a, b)
+        case '÷':
+            if (b === 0) return null
+            else return divide(a, b)
+        case '^':
+            return exponent(a,b)
+        default:
+            return null
     }
   }
