@@ -67,7 +67,7 @@ body {
 
 .calc-buttons {
     height:70px;
-    flex: 1 1 0;
+    flex: .25 1 0;
     border: 2px solid black;
     border-radius: 10px;
     font-size: x-large;
@@ -81,7 +81,7 @@ body {
 }
 
 .stretch {
-    flex: 2.15 1 0;
+    flex: .55 1 0;
     width: 250px;
 }
 
@@ -110,9 +110,6 @@ body {
     background-color:#59A5D8;
 }
 
-.zero-stretch {
-    flex: 2 1 0;
-}
 
 .button-press {
     opacity: .8;
