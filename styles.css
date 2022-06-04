@@ -69,7 +69,7 @@ body {
 
 .calc-buttons {
     height:70px;
-    flex: 1 1 0;
+    flex: 1;
     border: 2px solid black;
     border-radius: 10px;
     font-size: x-large;
@@ -83,15 +83,14 @@ body {
 }
 
 .stretch {
-    flex: 2.2 1 0;
+    flex: 2.2;
 }
 
 .calc-buttons:hover {opacity: .6;}
 
 .calc-buttons:active {
         background-color: #999;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
+        transform: translateY(2px);
       }
 
 #clear {
