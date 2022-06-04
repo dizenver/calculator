@@ -18,7 +18,7 @@ body {
 .calc-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 2px;
     margin: auto;
     height: auto;
     width: 400px;
@@ -81,7 +81,7 @@ body {
 }
 
 .stretch {
-    flex: 2 1 0;
+    flex: 2.2 1 0;
 }
 
 .calc-buttons:hover {opacity: .6;}
