@@ -95,7 +95,7 @@ function setOperator(operator) {
     firstOperand  = answerDisplay.textContent
     currentOperation = operator
     equationDisplay.textContent = `${firstOperand} ${currentOperation}`
-    shouldResetDisplay = true
+    resetDisplay();
 }
 
 function evaluate () {

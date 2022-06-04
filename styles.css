@@ -67,7 +67,7 @@ body {
 
 .calc-buttons {
     height:70px;
-    flex: .25 1 0;
+    flex: 1 1 0;
     border: 2px solid black;
     border-radius: 10px;
     font-size: x-large;
@@ -81,8 +81,7 @@ body {
 }
 
 .stretch {
-    flex: .55 1 0;
-    width: 250px;
+    flex: 2 1 0;
 }
 
 .calc-buttons:hover {opacity: .6;}
